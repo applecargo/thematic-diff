@@ -53,7 +53,7 @@
 	                    ?>
 
 					</div><!-- .entry-content -->
-					
+
 				</div><!-- #post -->
 	
 			<?php

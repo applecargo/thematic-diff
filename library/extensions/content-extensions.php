@@ -421,7 +421,7 @@ if (function_exists('childtheme_override_nav_above'))  {
                 	<?php wp_pagenavi(); ?>
 					<?php } else { ?>
 					  
-					<div class="nav-previous"><?php next_posts_link(sprintf('<span class="meta-nav">&laquo;</span> %s', __('Older posts', 'thematic') ) ) ?></div>
+					<div class="nav-previous"><?php next_posts_link('<span class="meta-nav">&laquo;</span>') ?></div>
 					
 					<div class="nav-next"><?php previous_posts_link(sprintf('%s <span class="meta-nav">&raquo;</span>',__( 'Newer posts', 'thematic') ) ) ?></div>
 
@@ -812,7 +812,8 @@ add_action('thematic_tagloop', 'thematic_tag_loop');
  */
 function thematic_time_title() {
 
-	$time_title = 'Y-m-d\TH:i:sO';
+	//$time_title = 'Y-m-d\TH:i:sO';
+	$time_title = 'Y-m-d H:i:s';
 	
 	// Filters should return correct 
 	$time_title = apply_filters('thematic_time_title', $time_title);
@@ -1157,6 +1158,8 @@ if (function_exists('childtheme_override_content'))  {
 			$post = apply_filters('the_content', $post);
 			$post = str_replace(']]>', ']]&gt;', $post);
 		}
+		$post .= '<span class="entry-date">' . get_the_time(thematic_time_title()) . '</span>';
+
 		echo apply_filters('thematic_post', $post);
 	} 
 } // end content
@@ -1708,10 +1711,10 @@ if (function_exists('childtheme_override_nav_below'))  {
                 <?php wp_pagenavi(); ?>
                 <?php } else { ?>  
 				
-				<div class="nav-previous"><?php next_posts_link(sprintf('<span class="meta-nav">&laquo;</span> %s', __('Older posts', 'thematic') ) ) ?></div>
-					
-				<div class="nav-next"><?php previous_posts_link(sprintf('%s <span class="meta-nav">&raquo;</span>',__( 'Newer posts', 'thematic') ) ) ?></div>
+				<div class="nav-next"><?php previous_posts_link('<span class="meta-nav">&laquo;</span>&nbsp;') ?></div>
 
+				<div class="nav-previous"><?php next_posts_link('&nbsp;<span class="meta-nav">&raquo;</span>') ?></div>
+				
 				<?php } ?>
 			</div>	
 	

@@ -3,11 +3,13 @@
 -------------------------------------------------------------- */
 
 body, input, textarea {
-    font:15px Georgia,serif;
-    line-height:22px;
+    font:0.75em/1.5 Verdana, AppleGothic, Sans-serif;
+    /*line-height:0.95em;*/
+    line-height: 1.5em;
+    margin: 8px 8px 8px 8px;
 }
 p, ul, ol, dd, pre {
-    margin-bottom:22px;
+    margin-bottom: 0;
 }
 pre, code {
 	font:14px Monaco, monospace;
@@ -63,13 +65,16 @@ a:hover {
     z-index:2;
 }
 #branding {
-    padding:88px 0 44px 0;
+    padding:0 0 0 0;
+    width: auto;
+    margin: 0;
 }
 #blog-title {
-    font-family:Arial,sans-serif;
-    font-size:34px;
+    font-family:"Lucida Grande", Tahoma, Arial, Helvetica, sans-serif;
+    font-size:3.6em;
     font-weight:bold;
     line-height:40px;
+    padding:12px 0 25px 0;
 }
 #blog-title a {
     color:#000;
@@ -77,12 +82,12 @@ a:hover {
 }
 #blog-title a:active,
 #blog-title a:hover {
-    color: #FF4B33;
+    color: #000;
 }
 #blog-description {
-    color:#666;
-    font-size:13px;
-    font-style:italic;
+    font-family:"Lucida Grande", Tahoma, Arial, Helvetica, sans-serif;
+    color:#000;
+    line-height:0.95em;
 }
 
 /* =Menu
@@ -92,7 +97,6 @@ a:hover {
     display:none;
 }
 #access {
-    border-bottom:1px solid #ccc;
     height:32px;
     font-size:13px;
     overflow:visible;
@@ -214,10 +218,19 @@ ul.sf-menu li li li.sfHover ul {
 
 /* =Content
 -------------------------------------------------------------- */
-
+#container {
+    margin: 0;
+    width: auto;
+}
+#content {
+    margin: 0;
+    width: auto;
+}
 #main {
     clear:both;
     padding:66px 0 22px 0;
+    width: auto;
+    margin: 0;
 }
 .page-title {
     font-size:13px;
@@ -242,7 +255,7 @@ ul.sf-menu li li li.sfHover ul {
     font-style:normal;
 }
 .hentry {
-    padding:0 0 22px 0;
+    padding:0 0 85px 0;
 }
 .single .hentry {
     padding:0;
@@ -253,11 +266,11 @@ ul.sf-menu li li li.sfHover ul {
     padding:22px 20px 0 20px;
 }
 .entry-title {
-    font-family:Arial,sans-serif;
-    font-size:26px;
+    font-family: "Lucida Grande", Tahoma, Arial, Helvetica, sans-serif;
+    font-size: 1.5em;
     font-weight:bold;
-    line-height:26px;
-    padding:0 0 7px 0;
+    line-height:0.95em;
+    padding:0 0 12px 0;
 }
 .entry-title a {
     color:#000;
@@ -272,6 +285,7 @@ ul.sf-menu li li li.sfHover ul {
     font-size:13px;
     font-style:italic;
     line-height:18px;
+    display: none;
 }
 .entry-meta .author {
 }
@@ -297,8 +311,19 @@ ul.sf-menu li li li.sfHover ul {
     letter-spacing:0.05em;
     text-transform:uppercase;
 }
+.entry-meta {
+    text-align: right;
+    font-family: sans-serif;
+    font-size: 0.45em;
+}
+.entry-date {
+    font-size: 0.45em;
+    font-family: sans-serif;
+    display: block;
+    float: right;
+}
 .entry-content {
-    padding:22px 0 0 0;
+    padding:0 0 0 0;
 }
 .entry-content h1,
 .entry-content h2 {
@@ -331,6 +356,7 @@ ul.sf-menu li li li.sfHover ul {
     font-size:13px;
     line-height:18px;
     margin:0 0 44px 0;
+    display: none;
 }
 .entry-utility a {
     color:#666;
@@ -432,11 +458,11 @@ li.content-column {
 }
 .nav-previous {
 	float: left;
-	width:50%;
+	width: auto;
 }
 .nav-next {
-	float: right;
-	width:50%;
+	float: left;
+	width: auto;
 	text-align:right;
 }
 #nav-above,#nav-below {
@@ -446,7 +472,7 @@ li.content-column {
     display:none;
 }
 .paged #nav-above {
-    display:block;
+    display:none;
     padding:0 0 44px 0;
 }
 
@@ -807,6 +833,7 @@ li.content-column {
 #footer {
     border-top:1px solid #ccc;
     margin-top:22px;
+    display: none;
 }
 #siteinfo {
     color:#666;
@@ -820,4 +847,17 @@ li.content-column {
 #siteinfo a:active,
 #siteinfo a:hover {
     color: #FF4B33;
+}
+
+
+/* wpadminbar overriding */
+
+#wpadminbar {
+    background: #FFF;
+    color: #7FB1DF;
+    display: none;
+}
+#wp-admin-bar-wp-logo
+{
+    display: none;
 }

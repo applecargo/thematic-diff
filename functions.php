@@ -161,7 +161,23 @@ if ( function_exists('childtheme_override_theme_setup') ) {
 }
 
 add_action('after_setup_theme', 'thematic_theme_setup', 10);
+add_filter('show_admin_bar', '__return_false');
+add_action('admin_head', 'my_custom_fonts');
 
+function my_custom_fonts() {
+  echo '<style>
+    html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+		font-family: Verdana, AppleGothic, Sans-serif;
+	}
+	#titlediv, #titlewrap {
+		font-size: 0.8em;
+		line-height: 1em;
+	}
+	#title-prompt-text {
+		padding: 8px !important;
+	}
+  </style>';
+}
 
 /**
  * Registers action hook: thematic_child_init
